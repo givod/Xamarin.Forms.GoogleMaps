@@ -254,6 +254,11 @@ namespace Xamarin.Forms.GoogleMaps.Android
             {
                 return;
             }
+            
+            if(FormsGoogleMaps.ResourceId != 0)
+            {   
+                Map.SetMapStyle(MapStyleOptions.LoadRawResourceStyle(Context, FormsGoogleMaps.ResourceId);
+            }
 
             if (e.PropertyName == Map.IsShowingUserProperty.PropertyName)
             {
