@@ -15,7 +15,7 @@ namespace Xamarin
 
         public static Context Context { get; private set; }
 
-        public static void Init(Activity activity, Bundle bundle, PlatformConfig config = null)
+        public static void Init(Activity activity, Bundle bundle, PlatformConfig config = null, int MapStyleResourceId = 0)
         {
             if (IsInitialized)
                 return;
