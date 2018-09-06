@@ -12,6 +12,7 @@ namespace Xamarin
     public static class FormsGoogleMaps
     {
         public static bool IsInitialized { get; private set; }
+        public static int ResourceId {get; set;}
 
         public static Context Context { get; private set; }
 
@@ -19,11 +20,12 @@ namespace Xamarin
         {
             if (IsInitialized)
                 return;
-
+            
             Context = activity;
 
             MapRenderer.Bundle = bundle;
             MapRenderer.Config = config ?? new PlatformConfig();
+            ResourceId = MapStyleResourceId;
 
 #pragma warning disable 618
             if (GooglePlayServicesUtil.IsGooglePlayServicesAvailable(Context) == ConnectionResult.Success)
